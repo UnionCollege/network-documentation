@@ -11,6 +11,4 @@ router.get('/phone', function (req, res) {
   return res.render('phone')
 })
 
-router.get('/misc', function (req, res) {
-  return res.render('misc')
-})
+router.use(require('./misc'))
