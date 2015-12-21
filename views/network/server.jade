@@ -1,0 +1,19 @@
+extends ../layout.jade
+
+block content
+  table.mdl-data-table.mdl-js-data-table
+    thead
+      tr
+        th.mdl-data-table__cell--non-numeric Name
+        th IP
+        th.mdl-data-table__cell--non-numeric Network
+        th.mdl-data-table__cell--non-numeric OS
+        th.mdl-data-table__cell--non-numeric Switch
+    tbody
+      each server in servers
+        tr
+          td.mdl-data-table__cell--non-numeric #{server.name}
+          td #{server.ip}
+          td.mdl-data-table__cell--non-numeric #{server.network}
+          td.mdl-data-table__cell--non-numeric #{server.os}
+          td.mdl-data-table__cell--non-numeric #{server.sw.name}/#{server.sw.port}
