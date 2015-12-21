@@ -3,8 +3,26 @@
 }
 .page-content {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 .card {
   margin: 8px;
+  min-height: 0;
+}
+.card__switches > .mdl-card__title {
+  color: #fff;
+  background: #448AFF;
+}
+.card__patchpanels > .mdl-card__title {
+  color: #fff;
+  background: #448AFF;
+}
+.card__servers > .mdl-card__title {
+  color: #fff;
+  background: #448AFF;
+}
+.card__waps > .mdl-card__title {
+  color: #fff;
+  background: #448AFF;
 }
