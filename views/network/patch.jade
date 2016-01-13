@@ -1,34 +1,38 @@
 extends ../layout.jade
 
 block content
-  .card.mdl-card
-    table.mdl-data-table.mdl-js-data-table
-      thead
-        tr
-          th Port
-          th Location
-          th Port
-          th Location
-          th Port
-          th Location
-          th Port
-          th Location
-      tbody
-        tr
-          td
-          td
-          td
-          td
-          td
-          td
-          td
-          td
-        tr
-          td
-          td
-          td
-          td
-          td
-          td
-          td
-          td
+  each panel in patch
+    .card.card__table.mdl-card.mdl-shadow--4dp
+      .mdl-card__title
+        h2.mdl-card__title-text Patch Panel Example
+      .mdl-card__supporting-text
+        table.mdl-data-table.mdl-js-data-table
+          thead
+            tr
+              th Port
+              th Location
+              th Port
+              th Location
+              th Port
+              th Location
+              th Port
+              th Location
+          tbody
+            tr
+              td
+              td
+              td
+              td
+              td
+              td
+              td
+              td
+            tr
+              td
+              td
+              td
+              td
+              td
+              td
+              td
+              td
