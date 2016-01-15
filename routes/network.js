@@ -16,10 +16,6 @@ router.get('/network/switch', function (req, res) {
   return res.render('network/switch')
 })
 
-router.get('/network/patch', function (req, res) {
-  return res.render('network/patch')
-})
-
 router.get('/network/patch', function (req, res, next) {
   PatchDB.find().sort({'node': 1, 'panel': 1}).exec(function (err, pa) {
     if (err) {

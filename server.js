@@ -1,12 +1,12 @@
 var express = require('express')
 
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/metisdata')
+mongoose.connect('mongodb://localhost/netdoc')
 
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', function (callback) {
-  console.log('[mongoose] connected to mongodb://localhost/metisdata')
+  console.log('[mongoose] connected to mongodb://localhost/netdoc')
 })
 
 var app = express()
@@ -24,5 +24,5 @@ app.use(routes)
 
 var server = app.listen(app.get('port'), app.get('ip'), function () {
   var address = server.address()
-  console.log('[server.js] app running at http://%s%s', address.address, address.port)
+  console.log('[server.js] app running at http://%s:%s', address.address, address.port)
 })

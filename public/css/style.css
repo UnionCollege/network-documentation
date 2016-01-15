@@ -10,6 +10,24 @@
   margin: 8px;
   min-height: 0;
 }
+
+.card__table {
+  width: 900px;
+}
+
+.card__table table {
+  width: 100%;
+}
+
+.card__table > .mdl-card__supporting-text {
+  width: auto;
+}
+
+.card__table > .mdl-card__title {
+  color: #fff;
+  background: #448AFF;
+}
+
 .card__switches > .mdl-card__title {
   color: #fff;
   background: #448AFF;
@@ -25,4 +43,21 @@
 .card__waps > .mdl-card__title {
   color: #fff;
   background: #448AFF;
+}
+
+.patch__data-title {
+  display: flex;
+  justify-content: space-between;
+}
+.patch__data-title-text {
+  font-weight: 700;
+  flex-basis: 12%;
+}
+.patch__data-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.patch__data-content-text {
+  flex-basis: 12%;
 }
