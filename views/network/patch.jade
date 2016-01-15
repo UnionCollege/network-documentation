@@ -6,19 +6,23 @@ block content
       .mdl-card__title
         h2.mdl-card__title-text N#{panel.node}P#{panel.panel}
       .mdl-card__supporting-text
-        .patch__data-title
-          p.patch__data-title-text Port
-          p.patch__data-title-text Location
-          p.patch__data-title-text Port
-          p.patch__data-title-text Location
-          p.patch__data-title-text Port
-          p.patch__data-title-text Location
-          p.patch__data-title-text Port
-          p.patch__data-title-text Location
         .patch__data-content
+          span.patch__data-title-pair
+            p.patch__data-title-item Port
+            p.patch__data-title-item Location
+          span.patch__data-title-pair
+            p.patch__data-title-item Port
+            p.patch__data-title-item Location
+          span.patch__data-title-pair
+            p.patch__data-title-item Port
+            p.patch__data-title-item Location
+          span.patch__data-title-pair
+            p.patch__data-title-item Port
+            p.patch__data-title-item Location
           each port in panel.port
-            p.patch__data-content-text #{port.num}
-            p.patch__data-content-text #{port.dest}
+            span.patch__data-content-pair
+              p.patch__data-content-item #{port.num}
+              p.patch__data-content-item #{port.dest}
       .mdl-card__menu
         button.mdl-button.mdl-js-button.mdl-button--icon(id='N#{panel.node}P#{panel.panel}')
           i.material-icons more_vert

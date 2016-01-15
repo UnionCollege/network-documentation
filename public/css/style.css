@@ -45,19 +45,29 @@
   background: #448AFF;
 }
 
-.patch__data-title {
+.patch__data-title-pair {
+  flex-basis: 20%;
   display: flex;
   justify-content: space-between;
+  padding-right: 10px;
+  padding-left: 10px;
 }
-.patch__data-title-text {
-  font-weight: 700;
-  flex-basis: 12%;
+.patch__data-title-item {
+  font-weight: bold;
 }
+
 .patch__data-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.patch__data-content-text {
-  flex-basis: 12%;
+.patch__data-content-pair {
+  flex-basis: 20%;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.patch__data-content-pair:last-child {
+  margin-left: auto;
 }
