@@ -100,3 +100,6 @@
 .misc__alpha-content-pair {
   flex-basis: 40%;
 }
+.mdl-menu__item a {
+	text-decoration: none;
+}

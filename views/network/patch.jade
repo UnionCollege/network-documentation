@@ -1,10 +1,19 @@
 extends ../layout.jade
 
 block content
+  #top.card.card__table.mdl-card.mdl-shadow--4dp
+    .mdl-card__title
+      h2.mdl-card__title-text Patch Panels
+    .mdl-card__supporting-text
+      .patch__data-content
+        each panel in patch
+          span.patch__data-title-pair
+            p
+              a.mdl-button.mdl-js-button.mdl-button--primary.mdl-js-ripple-effect(href='#N#{panel.node}P#{panel.panel}' data-scroll) Node #{panel.node} Panel #{panel.panel}
   each panel in patch
     .card.card__table.mdl-card.mdl-shadow--4dp
       .mdl-card__title
-        h2.mdl-card__title-text N#{panel.node}P#{panel.panel}
+        h2.mdl-card__title-text Node #{panel.node} Panel #{panel.panel}
       .mdl-card__supporting-text
         .patch__data-content
           span.patch__data-title-pair
@@ -28,6 +37,6 @@ block content
           i.material-icons more_vert
       ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for='N#{panel.node}P#{panel.panel}')
         li.mdl-menu__item
-          a(href('#N0P0', data-scroll)) Back to top
+          a(href='#top' data-scroll) Back to top
         li.mdl-menu__item
-          a(href('/network/patch/add')) Add
+          a(href='/network/patch/add') Add

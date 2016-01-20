@@ -15,3 +15,12 @@ html(lang='en')
       main.mdl-layout__content
         .page-content
           block content
+      footer
+        script(src="/js/smooth-scroll.min.js")
+        script.
+        smoothScroll.init({
+            speed: 750,
+            easing: 'easeInOutQuad',
+            updateURL: false,
+            offset: 8
+          })
