@@ -1,17 +1,145 @@
 extends layout.jade
 
 block content
-  .card.card__switches.mdl-card.mdl-shadow--4dp
+  .card.card__misc.mdl-card.mdl-shadow--4dp
     .mdl-card__title
-      h2.mdl-card__title-text NATO Alphabet
+      h2.mdl-card__title-text NATO Phonetic Alphabet
     .mdl-card__supporting-text
-      | The North Atlantic Treaty Organization's phonetic alphabet
-    .mdl-card__actions
-      a.mdl-button.mdl-js-button.mdl-button--primary(href='misc/nato') Details
-  .card.card__patchpanels.mdl-card.mdl-shadow--4dp
+      .misc__alpha-content
+        each char in alpha
+          span.misc__alpha-content-pair
+            p.misc__alpha-content-item #{char.letter}
+            p.misc__alpha-content-item #{char.phonetic}
+  .card.card__misc.mdl-card.mdl-shadow--4dp
     .mdl-card__title
-      h2.mdl-card__title-text Network Drive Map
+      h2.mdl-card__title-text Network Drives
     .mdl-card__supporting-text
-      | Documentation for the Union College patch panels.
-    .mdl-card__actions
-      a.mdl-button.mdl-js-button.mdl-button--primary(href='misc/drives') Details
+      ul.misc__ul
+        li.misc__mapul A - E: local
+        li.misc__mapul F: \\marcie\public
+        li.misc__mapul F: \\woodstock\netapps
+        li.misc__mapul H: \\woodstock\home directories
+        li.misc__mapul M: \\woodstock\microlab share
+        li.misc__mapul N: \\woodstock\netapps
+        li.misc__mapul O: \\franklin\data P: \\woodstock\public
+        li.misc__mapul Q: \\marcie\public
+        li.misc__mapul Q: Private Data Folder on APSAAPS
+        li.misc__mapul R: \\marcie\publicrw
+        li.misc__mapul S: \\charlie\data
+        li.misc__mapul W: \\marcie\username$
+        li.misc__mapul X: \\marcie\fileswap
+        li.misc__mapul Z: \\zip-drive backup 
+  .card.card__misc.mdl-card.mdl-shadow--4dp
+    .mdl-card__title
+      h2.mdl-card__title-text VLAN Data
+    .mdl-card__supporting-text
+      .misc__vlan-content
+        span.misc__vlan-content-pair
+          p.misc__vlan-content-item 02
+          p.misc__vlan-content-item Server
+        span.misc__vlan-content-pair
+          p.misc__vlan-content-item 04
+          p.misc__vlan-content-item Outside
+        span.misc__vlan-content-pair
+          p.misc__vlan-content-item 06
+          p.misc__vlan-content-item Student
+        span.misc__vlan-content-pair
+          p.misc__vlan-content-item 07
+          p.misc__vlan-content-item ASvlan
+        span.misc__vlan-content-pair
+          p.misc__vlan-content-item 08
+          p.misc__vlan-content-item ASVOICE
+        span.misc__vlan-content-pair
+          p.misc__vlan-content-item 09
+          p.misc__vlan-content-item CVC
+        span.misc__vlan-content-pair
+          p.misc__vlan-content-item 10
+          p.misc__vlan-content-item ISCSI
+        span.misc__vlan-content-pair
+          p.misc__vlan-content-item 11
+          p.misc__vlan-content-item Employee
+        span.misc__vlan-content-pair
+          p.misc__vlan-content-item 12
+          p.misc__vlan-content-item Academic
+        span.misc__vlan-content-pair
+          p.misc__vlan-content-item 16
+          p.misc__vlan-content-item MAUC_DMZ
+        span.misc__vlan-content-pair
+          p.misc__vlan-content-item 20
+          p.misc__vlan-content-item Security
+        span.misc__vlan-content-pair
+          p.misc__vlan-content-item 25
+          p.misc__vlan-content-item EnergyMGMT
+        span.misc__vlan-content-pair
+          p.misc__vlan-content-item 30
+          p.misc__vlan-content-item CSLab
+        span.misc__vlan-content-pair
+          p.misc__vlan-content-item 004x
+          p.misc__vlan-content-item AS
+        span.misc__vlan-content-pair
+          p.misc__vlan-content-item 007x
+          p.misc__vlan-content-item AS
+        span.misc__vlan-content-pair
+          p.misc__vlan-content-item 3110
+          p.misc__vlan-content-item Guest
+        span.misc__vlan-content-pair
+          p.misc__vlan-content-item 3111
+          p.misc__vlan-content-item Admin
+        span.misc__vlan-content-pair
+          p.misc__vlan-content-item 3112
+          p.misc__vlan-content-item MAUC
+        span.misc__vlan-content-pair
+          p.misc__vlan-content-item 3115
+          p.misc__vlan-content-item NetMGR
+  .card.card__misc.mdl-card.mdl-shadow--4dp
+    .mdl-card__title
+      h2.mdl-card__title-text Building Codes
+    .mdl-card__supporting-text
+      .building__code-content
+        span.building__code-content-pair
+          p.building__code-content-item 01
+          p.building__code-content-item Dick Building
+        span.building__code-content-pair
+          p.building__code-content-item 02
+          p.building__code-content-item Krueger Center
+        span.building__code-content-pair
+          p.building__code-content-item 03
+          p.building__code-content-item Unused
+        span.building__code-content-pair
+          p.building__code-content-item 04
+          p.building__code-content-item Love Building
+        span.building__code-content-pair
+          p.building__code-content-item 05
+          p.building__code-content-item Larson Center
+        span.building__code-content-pair
+          p.building__code-content-item 06
+          p.building__code-content-item Engel Hall
+        span.building__code-content-pair
+          p.building__code-content-item 07
+          p.building__code-content-item Prescott Hall
+        span.building__code-content-pair
+          p.building__code-content-item 08
+          p.building__code-content-item Rees Hall
+        span.building__code-content-pair
+          p.building__code-content-item 09
+          p.building__code-content-item Culver Hall
+        span.building__code-content-pair
+          p.building__code-content-item 10
+          p.building__code-content-item Carnegie
+        span.building__code-content-pair
+          p.building__code-content-item 11
+          p.building__code-content-item Gymnasium
+        span.building__code-content-pair
+          p.building__code-content-item 12
+          p.building__code-content-item CVC
+  .card.card__misc.mdl-card.mdl-shadow--4dp
+    .mdl-card__title
+      h2.mdl-card__title-text Network Group Naming
+    .mdl-card__supporting-text
+      ul.misc__ul
+        li.misc__groupul E_[Enterprise Group Name]
+        li.misc__groupul G_[Global Group Name]
+        li.misc__groupul L_[Local Group Name]
+        li.misc__groupul Academic division group names start with "Div"
+        li.misc__groupul All other departments start with "Dpt"
+        li.misc__groupul <br><strong>Example:</strong> G_DivBusinessAndCS is for the division of Business and Computer Science.

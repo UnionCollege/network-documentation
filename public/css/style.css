@@ -1,73 +1,102 @@
-.demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type  {
-  padding-right: 0;
+.demo-layout-waterfall .mdl-layout__header-row .mdl-navigation__link:last-of-type	{
+	padding-right: 0;
 }
 .page-content {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 .card {
-  margin: 8px;
-  min-height: 0;
+	margin: 8px;
+	min-height: 0;
+  width: 350px;
 }
 
 .card__table {
-  width: 900px;
+	width: 900px;
 }
 
 .card__table table {
-  width: 100%;
+	width: 100%;
 }
 
 .card__table > .mdl-card__supporting-text {
-  width: auto;
+	width: auto;
 }
 
 .card__table > .mdl-card__title {
-  color: #fff;
-  background: #448AFF;
+	color: #fff;
+	background: #448AFF;
 }
 
 .card__switches > .mdl-card__title {
-  color: #fff;
-  background: #448AFF;
+	color: #fff;
+	background: #448AFF;
 }
 .card__patchpanels > .mdl-card__title {
-  color: #fff;
-  background: #448AFF;
+	color: #fff;
+	background: #448AFF;
 }
 .card__servers > .mdl-card__title {
-  color: #fff;
-  background: #448AFF;
+	color: #fff;
+	background: #448AFF;
 }
 .card__waps > .mdl-card__title {
-  color: #fff;
-  background: #448AFF;
+	color: #fff;
+	background: #448AFF;
 }
-
+.card__misc > .mdl-card__title {
+	color: #fff;
+	background: #448AFF;
+}
+.mdl-button {
+  color: white;
+}
 .patch__data-title-pair {
-  flex-basis: 20%;
-  display: flex;
-  justify-content: space-between;
-  padding-right: 10px;
-  padding-left: 10px;
+	flex-basis: 20%;
+	display: flex;
+	justify-content: space-between;
+	padding-right: 10px;
+	padding-left: 10px;
 }
 .patch__data-title-item {
-  font-weight: bold;
+	font-weight: bold;
 }
 
-.patch__data-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.patch__data-content,
+.misc__alpha-content,
+.misc__vlan-content,
+.building__code-content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
-.patch__data-content-pair {
-  flex-basis: 20%;
-  display: flex;
-  justify-content: space-between;
-  padding-right: 10px;
-  padding-left: 10px;
+.patch__data-content-pair,
+.misc__alpha-content-pair,
+.misc__vlan-content-pair,
+.building__code-content-pair {
+	flex-basis: 20%;
+	display: flex;
+	justify-content: space-between;
+	padding-right: 10px;
+	padding-left: 10px;
 }
-.patch__data-content-pair:last-child {
-  margin-left: auto;
+.patch__data-content-pair:last-child,
+.misc__vlan-content-pair:last-child {
+	margin-left: auto;
+}
+.misc__ul {
+  padding: 0;
+  margin: 0;
+}
+.misc__groupul, .misc__mapul {
+  list-style-type: none;
+  list-style-position: outside;
+}
+.misc__vlan-content-pair,
+.building__code-content-pair {
+  flex-basis: 40%;
+}
+.misc__alpha-content-pair {
+  flex-basis: 40%;
 }

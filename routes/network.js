@@ -1,12 +1,15 @@
 var express = require('express')
 var PatchDB = require('./../models/patch.js')
+var ApsDB = require('./../models/aps.js')
 var router = module.exports = express.Router()
 
+/*
 function pad (num) {
   var size = 2
   var s = '000000000' + num
   return s.substr(s.length - size)
 }
+*/
 
 router.get('/network', function (req, res) {
   return res.render('network')
@@ -28,14 +31,14 @@ router.get('/network/patch', function (req, res, next) {
     })
     res.render('network/patch', {
       title: 'Patch Panels',
-      patch: pa,
-      id1: true
+      patch: pa
     })
   })
 })
 
-router.get('/network/server', function (req, res) {
-  return res.render('network/server', {
+router.get('/network/server', function (req, res, next) {
+  res.render('network/server', {
+    title: 'Servers',
     servers: [{
       name: 'UCC1',
       ip: '10.2.2.42',
@@ -49,6 +52,21 @@ router.get('/network/server', function (req, res) {
   })
 })
 
-router.get('/network/wap', function (req, res) {
-  return res.render('network/wap')
+router.get('/network/aps', function (req, res, next) {
+  ApsDB.find().sort({'name': 1}).exec(function (err, ap) {
+    if (err) {
+      return next(err)
+    }
+    res.render('network/aps', {
+      title: 'Access Points',
+      aps: ap
+    })
+  })
+})
+
+// Phone
+router.get('/phone', function (req, res, next) {
+  res.render('phone', {
+    title: 'Phones'
+  })
 })
