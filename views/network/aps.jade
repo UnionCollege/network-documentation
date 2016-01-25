@@ -25,8 +25,5 @@ block content
                 a.mdl-button.mdl-js-button.mdl-button--icon(href='https://10.1.1.200/centcfg/device_edit.asp?entity=device&selector=#{ap.mac}')
                   i.material-icons settings
     .mdl-card__menu
-      button.mdl-button.mdl-js-button.mdl-button--icon(id='aps')
-        i.material-icons more_vert
-    ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for='aps')
-      li.mdl-menu__item
-        a(href='/network/aps/add') Add
+      a.mdl-button.mdl-js-button.mdl-button--icon(href='/network/aps/add')
+          i.material-icons add
