@@ -3,6 +3,23 @@ var PatchDB = require('./../../models/patch.js')
 
 var router = module.exports = express.Router()
 
+router.get('/network/patch', function (req, res, next) {
+  PatchDB.find().sort({'node': 1, 'panel': 1}).exec(function (err, pa) {
+    if (err) {
+      return next(err)
+    }
+    pa.forEach(function (panel) {
+      panel.port.sort(function (a, b) {
+        return a.num - b.num
+      })
+    })
+    res.render('network/patch', {
+      title: 'Patch Panels',
+      patch: pa
+    })
+  })
+})
+
 router.get('/network/patch/add', function (req, res, next) {
   res.render('network/add/patch', {
     title: 'Add Panel'
