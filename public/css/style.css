@@ -52,18 +52,21 @@
 .mdl-card__menu button {
 	color: white;
 }
-.patch__data-title-pair {
+.patch__data-title-pair,
+.aps__data-title-pair {
 	flex-basis: 20%;
 	display: flex;
 	justify-content: space-between;
 	padding-right: 10px;
 	padding-left: 10px;
 }
-.patch__data-title-item {
+.patch__data-title-item,
+.aps__data-title-item {
 	font-weight: bold;
 }
 
 .patch__data-content,
+.aps__data-content,
 .misc__alpha-content,
 .misc__vlan-content,
 .building__code-content {
@@ -72,6 +75,7 @@
 	justify-content: space-between;
 }
 .patch__data-content-pair,
+.aps__data-content-pair,
 .misc__alpha-content-pair,
 .misc__vlan-content-pair,
 .building__code-content-pair {
@@ -82,6 +86,7 @@
 	padding-left: 10px;
 }
 .patch__data-content-pair:last-child,
+.aps__data-content-pair:last-child,
 .misc__vlan-content-pair:last-child {
 	margin-left: auto;
 }
@@ -104,11 +109,17 @@
 	text-decoration: none;
 }
 
-.patch__add-form {
+.patch__add-form,
+.aps__add-form {
 	display: flex;
 	flex-wrap: wrap;
 }
-.patch__buttons {
+.patch__buttons,
+.aps__buttons {
 	display: flex;
 	justify-content: space-around;
+}
+.aps__data-title-pair,
+.aps__data-content-pair {
+	flex-basis: 90%;
 }

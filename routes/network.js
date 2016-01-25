@@ -1,6 +1,4 @@
 var express = require('express')
-var PatchDB = require('./../models/patch.js')
-var ApsDB = require('./../models/aps.js')
 var router = module.exports = express.Router()
 
 /*
@@ -37,17 +35,7 @@ router.get('/network/server', function (req, res, next) {
   })
 })
 
-router.get('/network/aps', function (req, res, next) {
-  ApsDB.find().sort({'name': 1}).exec(function (err, ap) {
-    if (err) {
-      return next(err)
-    }
-    res.render('network/aps', {
-      title: 'Access Points',
-      aps: ap
-    })
-  })
-})
+router.use(require('./network/aps.js'))
 
 // Phone
 router.get('/phone', function (req, res, next) {

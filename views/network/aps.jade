@@ -1,0 +1,32 @@
+extends ../layout.jade
+
+block content
+  .card.card__table.mdl-card.mdl-shadow--4dp
+    .mdl-card__title
+      h2.mdl-card__title-text Wireless Access Points
+    .mdl-card__supporting-text
+      table.mdl-data-table.mdl-js-data-table
+        thead
+          tr
+            th.mdl-data-table__cell--non-numeric Name
+            th.mdl-data-table__cell--non-numeric MAC
+            th Switch
+            th HP Console
+        tbody
+          each ap in aps
+            tr
+              td.mdl-data-table__cell--non-numeric
+                a(href="/network/aps/") #{ap.name}
+              td.mdl-data-table__cell--non-numeric
+                a(href="/network/aps/") #{ap.mac}
+              td
+                a(href="/network/switch/#{ap.sw.name}/#{ap.sw.port}") #{ap.sw.name}/#{ap.sw.port}
+              td
+                a.mdl-button.mdl-js-button.mdl-button--icon(href='https://10.1.1.200/centcfg/device_edit.asp?entity=device&selector=#{ap.mac}')
+                  i.material-icons settings
+    .mdl-card__menu
+      button.mdl-button.mdl-js-button.mdl-button--icon(id='aps')
+        i.material-icons more_vert
+    ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for='aps')
+      li.mdl-menu__item
+        a(href='/network/aps/add') Add
