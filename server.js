@@ -17,7 +17,7 @@ app.set('port', process.env.PORT || 3000)
 app.set('ip', process.env.IP || 'localhost')
 
 app.use(express.static('public'))
-app.locals.sitename = 'Network Documentation'
+app.locals.sitename = 'Network Docs'
 app.locals.source_url = 'https://github.com/UnionCollege/network-documentation'
 
 app.use(routes)

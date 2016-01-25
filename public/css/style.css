@@ -103,3 +103,11 @@
 .mdl-menu__item a {
 	text-decoration: none;
 }
+
+.patch__add-form {
+	display: flex;
+}
+.patch__buttons {
+	display: flex;
+	justify-content: space-around;
+}
