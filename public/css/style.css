@@ -49,8 +49,8 @@
 	color: #fff;
 	background: #448AFF;
 }
-.mdl-button {
-  color: white;
+.mdl-card__menu button {
+	color: white;
 }
 .patch__data-title-pair {
 	flex-basis: 20%;
@@ -106,6 +106,7 @@
 
 .patch__add-form {
 	display: flex;
+	flex-wrap: wrap;
 }
 .patch__buttons {
 	display: flex;

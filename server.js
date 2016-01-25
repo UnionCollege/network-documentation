@@ -1,4 +1,5 @@
 var express = require('express')
+var bodyParser = require('body-parser')
 
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/netdoc')
@@ -19,6 +20,10 @@ app.set('ip', process.env.IP || 'localhost')
 app.use(express.static('public'))
 app.locals.sitename = 'Network Docs'
 app.locals.source_url = 'https://github.com/UnionCollege/network-documentation'
+
+app.use(bodyParser.urlencoded({
+  extended: false
+}))
 
 app.use(routes)
 

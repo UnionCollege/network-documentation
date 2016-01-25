@@ -1,0 +1,63 @@
+extends ../../layout.jade
+
+block content
+  .card.card__patchpanels.mdl-card.mdl-shadow--4dp
+    .mdl-card__title
+      h2.mdl-card__title-text #{title}
+    .mdl-card__supporting-text
+      form(action='', method='POST')
+        if padetail
+          .patch__add-form
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', pattern='-?[0-9]*(\.[0-9]+)?', autocomplete='off', value='#{padetail.node}', name='node', id='node')
+              label.mdl-textfield__label(for='node') Node
+              span.mdl-textfield__error Input is not a number!
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', pattern='-?[0-9]*(\.[0-9]+)?', autocomplete='off', value='#{padetail.panel}', name='panel', id='panel')
+              label.mdl-textfield__label(for='panel') Panel
+              span.mdl-textfield__error Input is not a number!
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', pattern='-?[0-9]*(\.[0-9]+)?', autocomplete='off', value='#{padetail.num}', name='num', id='port')
+              label.mdl-textfield__label(for='port') Port
+              span.mdl-textfield__error Input is not a number!
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', autocomplete='off', value='#{padetail.dest}', name='dest', id='dest')
+              label.mdl-textfield__label(for='dest') Destination
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', pattern='-?[0-9]*(\.[0-9]+)?', autocomplete='off', value='#{padetail.swname}', name='swname', id='swname')
+              label.mdl-textfield__label(for='swname') Switch
+              span.mdl-textfield__error Input is not a number!
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', pattern='-?[0-9]*(\.[0-9]+)?', autocomplete='off', value='#{padetail.swport}', name='swport', id='port')
+              label.mdl-textfield__label(for='port') Port
+              span.mdl-textfield__error Input is not a number!
+        else
+          .patch__add-form
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', pattern='-?[0-9]*(\.[0-9]+)?', autocomplete='off', value='', name='node', id='node')
+              label.mdl-textfield__label(for='node') Node
+              span.mdl-textfield__error Input is not a number!
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', pattern='-?[0-9]*(\.[0-9]+)?', autocomplete='off', value='' name='panel', id='panel')
+              label.mdl-textfield__label(for='panel') Panel
+              span.mdl-textfield__error Input is not a number!
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', pattern='-?[0-9]*(\.[0-9]+)?', autocomplete='off', value='' name='num', id='port')
+              label.mdl-textfield__label(for='port') Port
+              span.mdl-textfield__error Input is not a number!
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', autocomplete='off', value='' name='dest', id='dest')
+              label.mdl-textfield__label(for='dest') Destination
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', pattern='-?[0-9]*(\.[0-9]+)?', autocomplete='off', value='' name='swname', id='swname')
+              label.mdl-textfield__label(for='swname') Switch
+              span.mdl-textfield__error Input is not a number!
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', pattern='-?[0-9]*(\.[0-9]+)?', autocomplete='off', value='' name='swport', id='port')
+              label.mdl-textfield__label(for='port') Port
+              span.mdl-textfield__error Input is not a number!
+        .patch__buttons
+          button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored(type='submit', name='action', value='save') Save
+          if padetail
+            button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(type='submit', name='action', value='delete') Delete
+          a.mdl-button.mdl-js-button.mdl-js-ripple-effect(href='/network/patch') Cancel

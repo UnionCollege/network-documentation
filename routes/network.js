@@ -36,6 +36,8 @@ router.get('/network/patch', function (req, res, next) {
   })
 })
 
+router.use(require('./dynamic/patch.js'))
+
 router.get('/network/server', function (req, res, next) {
   res.render('network/server', {
     title: 'Servers',

@@ -1,0 +1,10 @@
+extends layout.jade
+
+block content
+  .card.card__error.mdl-card.mdl-shadow--4dp
+    .mdl-card__title
+      h2.mdl-card__title-text #{notification.title}
+    .mdl-card__supporting-text
+      | #{notification.message}
+    .mdl-card__actions
+      a.mdl-button.mdl-js-button.mdl-button--primary(href='/') Got it
