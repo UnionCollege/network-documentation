@@ -14,9 +14,6 @@
 .card__table table {
 	width: 100%;
 }
-.card__table > .mdl-card__supporting-text {
-	width: auto;
-}
 .card__table > .mdl-card__title {
 	color: #fff;
 	background: #448AFF;
