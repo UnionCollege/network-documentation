@@ -1,0 +1,23 @@
+extends ../layout.jade
+
+block content
+  .card.card__table.mdl-card.mdl-shadow--4dp
+    .mdl-card__title
+      h2.mdl-card__title-text Network Map
+    .mdl-card__media
+      table.mdl-data-table.mdl-js-data-table
+        thead
+          tr
+            th.mdl-data-table__cell--non-numeric Switch
+            th.mdl-data-table__cell--non-numeric Patch
+            th.mdl-data-table__cell--non-numeric Location
+        tbody
+          - each item in patch
+            - each port in item.port
+              tr
+                td.mdl-data-table__cell--non-numeric temp#{port.name}/#{port.port}temp
+                td.mdl-data-table__cell--non-numeric Node <strong>#{item.node}</strong>, Panel <strong>#{item.panel}</strong>, Port <strong>#{port.num}</strong>
+                td.mdl-data-table__cell--non-numeric #{port.dest}
+    .mdl-card__menu
+      a.mdl-button.mdl-js-button.mdl-button--icon(href='/network/aps/add')
+          i.material-icons add

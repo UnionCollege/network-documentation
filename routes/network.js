@@ -37,6 +37,8 @@ router.get('/network/server', function (req, res, next) {
 
 router.use(require('./network/aps.js'))
 
+router.use(require('./network/map.js'))
+
 // Phone
 router.get('/phone', function (req, res, next) {
   res.render('phone', {
