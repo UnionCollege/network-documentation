@@ -4,26 +4,27 @@ block content
   .card.card__table.mdl-card.mdl-shadow--4dp
     .mdl-card__title
       h2.mdl-card__title-text Wireless Access Points
-    .mdl-card__media
-      table.mdl-data-table.mdl-js-data-table
+    .mdl-card__supporting-text.wap__table
+      table
         thead
           tr
-            th.mdl-data-table__cell--non-numeric Name
-            th.mdl-data-table__cell--non-numeric MAC
-            th Switch
-            th HP Console
+            th.wap__table-left Name
+            th.wap__table-left MAC
+            th.wap__table-right Switch
+            th.wap__table-right HP Console
         tbody
           each ap in aps
             tr
-              td.mdl-data-table__cell--non-numeric
-                a(href="/network/aps/") #{ap.name}
-              td.mdl-data-table__cell--non-numeric
-                a(href="/network/aps/") #{ap.mac}
-              td
+              td.wap__table-left 
+                a.mdl-button.mdl-js-button.mdl-button--icon(href='/network/aps/#{ap.name}')
+                  i.fa.fa-pencil-square-o.fa-sm
+                | #{ap.name}
+              td.wap__table-left #{ap.mac}
+              td.wap__table-right
                 a(href="/network/switch/#{ap.sw.name}/#{ap.sw.port}") #{ap.sw.name}/#{ap.sw.port}
-              td
+              td.wap__table-right
                 a.mdl-button.mdl-js-button.mdl-button--icon(href='https://10.1.1.200/centcfg/device_edit.asp?entity=device&selector=#{ap.mac}')
-                  i.material-icons settings
+                  i.fa.fa-gear
     .mdl-card__menu
-      a.mdl-button.mdl-js-button.mdl-button--icon
+      a.mdl-button.mdl-js-button.mdl-button--icon(href='/network/aps/add')
           i.material-icons add

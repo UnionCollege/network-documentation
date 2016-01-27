@@ -1,0 +1,49 @@
+extends ../../layout.jade
+
+block content
+  .card.card__patchpanels.mdl-card.mdl-shadow--4dp
+    .mdl-card__title
+      h2.mdl-card__title-text #{title}
+    .mdl-card__supporting-text
+      form(action='', method='POST')
+        if apdetail
+          .patch__add-form
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', pattern='^([a-z]|[A-Z]|[0-9])*$', autocomplete='off', value='#{apdetail.name}', name='name', id='name')
+              label.mdl-textfield__label(for='name') Name
+              span.mdl-textfield__error Input must not contain spaces or special characters
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', pattern='^([0-9a-fA-F][0-9a-fA-F]:){5}([0-9a-fA-F][0-9a-fA-F])$', autocomplete='off', value='#{apdetail.mac}' name='mac', id='mac')
+              label.mdl-textfield__label(for='mac') MAC
+              span.mdl-textfield__error Input does not match MAC format!
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', pattern='^([0-9])*$', autocomplete='off', value='#{apdetail.swname}', name='swname', id='swname')
+              label.mdl-textfield__label(for='swname') Switch
+              span.mdl-textfield__error Input must be numerical characters only
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', pattern='^([a-z]|[A-Z]|[0-9])*$', autocomplete='off', value='#{apdetail.swport}', name='swport', id='swport')
+              label.mdl-textfield__label(for='swport') Port
+              span.mdl-textfield__error Input must not contain spaces or special characters
+        else
+          .patch__add-form
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', pattern='^([a-z]|[A-Z]|[0-9])*$', autocomplete='off', value='', name='name', id='name')
+              label.mdl-textfield__label(for='name') Name
+              span.mdl-textfield__error Input must not contain spaces or special characters
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', pattern='^([0-9a-fA-F][0-9a-fA-F]:){5}([0-9a-fA-F][0-9a-fA-F])$', autocomplete='off', value='' name='mac', id='mac')
+              label.mdl-textfield__label(for='mac') MAC
+              span.mdl-textfield__error Input does not match MAC format!
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', pattern='^([0-9])*$', autocomplete='off', value='' name='switch', id='switch')
+              label.mdl-textfield__label(for='switch') Switch
+              span.mdl-textfield__error Input must be numerical characters only
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', pattern='^([a-z]|[A-Z]|[0-9])*$', autocomplete='off', value='' name='port', id='port')
+              label.mdl-textfield__label(for='port') Port
+              span.mdl-textfield__error Input must not contain spaces or special characters
+        .patch__buttons
+          button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored(type='submit', name='action', value='save') Save
+          if apdetail
+            button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(type='submit', name='action', value='delete') Delete
+          a.mdl-button.mdl-js-button.mdl-js-ripple-effect(href='/network/aps') Cancel

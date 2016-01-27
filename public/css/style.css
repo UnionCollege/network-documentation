@@ -102,3 +102,23 @@
 	display: flex;
 	justify-content: space-around;
 }
+.wap__table {
+	width: auto;
+}
+.wap__table-left {
+	text-align: left;
+}
+.wap__table-right {
+	text-align: right;
+}
+.fa-gear {
+	margin-top: 4px;
+	margin-left: 1px;
+}
+.fa-pencil-square-o {
+	margin-top: 4px;
+	margin-left: 2px;
+}
+.fa-sm {
+	font-size: .8em;
+}
