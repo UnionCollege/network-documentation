@@ -44,6 +44,13 @@ connection.query('CREATE TABLE IF NOT EXISTS switch_ports(id INT NOT NULL AUTO_I
   }
 })
 
+// Create table: alpha
+connection.query('CREATE TABLE IF NOT EXISTS alpha(letter VARCHAR(1) NOT NULL, phonetic VARCHAR(15), PRIMARY KEY(letter))', function (err, result, fields) {
+  if (err) {
+    throw err
+  }
+})
+
 connection.query('SHOW TABLES', function (err, result, fields) {
   if (err) {
     throw err

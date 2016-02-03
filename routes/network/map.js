@@ -3,6 +3,20 @@ var PatchDB = require('./../../models/patch.js')
 
 var router = module.exports = express.Router()
 
+router.getConnection(function (err, connection) {
+  if (err) {
+    throw err
+  }
+  connection.query('SELECT 1 + 1 AS solution', function (err, rows, fields) {
+    if (err) {
+      throw err
+    }
+    console.log('[sql] The solution is: ', rows[0].solution)
+  })
+
+  connection.end()
+})
+
 router.get('/network/map', function (req, res, next) {
   PatchDB.find().sort({'node': 1, 'panel': 1}).exec(function (err, pa) {
     if (err) {
