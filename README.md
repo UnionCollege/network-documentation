@@ -11,7 +11,8 @@
 
 ## Technologies
 
-* [Node](https://nodejs.org/)
-* [Express](http://expressjs.com/)
-* [Jade](http://jade-lang.com/)
-* [MariaDB](https://mariadb.org/)
+* [node](https://github.com/nodejs/node#readme)
+* [express](https://github.com/strongloop/express#readme)
+* [jade](https://github.com/pugjs/jade#readme)
+* [node-mysql](https://github.com/felixge/node-mysql#readme)
+* [body-parser](https://github.com/expressjs/body-parser#readme)
