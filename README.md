@@ -1,5 +1,5 @@
 # Union College Network Documentation Application
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 #### A basic CRUD app built to store the documentation for the Union College network.
 
