@@ -8,5 +8,6 @@ config.mariadb = {}
 config.mariadb.host = ''
 config.mariadb.user = ''
 config.mariadb.pass = ''
+config.mariadb.db = ''
 
 module.exports = config
