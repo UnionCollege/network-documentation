@@ -1,8 +1,18 @@
 var express = require('express')
 var bodyParser = require('body-parser')
 var config = require('./config.js')
-var connection = require('express-myconnection')
-var mysql = require('mysql')
+var knex = require('knex')({
+  client: 'mysql',
+  connection: {
+    host: config.mariadb.host,
+    user: config.mariadb.user,
+    password: config.mariadb.pass,
+    database: config.mariadb.db,
+    charset: 'utf8'
+  }
+})
+var Bookshelf = require('bookshelf')(knex)
+
 
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/netdoc')
@@ -27,15 +37,6 @@ app.locals.source_url = 'https://github.com/UnionCollege/network-documentation'
 app.use(bodyParser.urlencoded({
   extended: false
 }))
-
-app.use(
-  connection(mysql, {
-    host: config.mariadb.host,
-    user: config.mariadb.user,
-    password: config.mariadb.pass,
-    database: config.mariadb.db
-  })
-)
 
 app.use(routes)
 
