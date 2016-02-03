@@ -13,6 +13,34 @@ var knex = require('knex')({
 })
 var Bookshelf = require('bookshelf')(knex)
 
+// Models
+var apsDB = Bookshelf.Model.extend({
+  tableName: 'access_points'
+})
+var alphaDB = Bookshelf.Model.extend({
+  tableName: 'alpha'
+})
+var panel_portsDB = Bookshelf.Model.extend({
+  tableName: 'panel_ports'
+})
+var node_panelDB = Bookshelf.Model.extend({
+  tableName: 'node_panel',
+  panel_id: function () {
+    return this.hasMany(panel_portsDB, 'id')
+  }
+})
+var switch_portsDB = Bookshelf.Model.extend({
+  tableName: 'switch_ports',
+  panel: function () {
+    return this.belongsTo(panel_portsDB, 'id')
+  },
+  switch: function () {
+    return this.hasOne(switch_detailsDB, 'id')
+  }
+})
+var switch_detailsDB = Bookshelf.Model.extend({
+  tableName: 'switch_details'
+})
 
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/netdoc')
