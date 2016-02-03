@@ -1,7 +1,7 @@
 # Union College Network Documentation Application
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
-#### This is a basic CRUD app built to store the documentation for the Union College network.
+#### A basic CRUD app built to store the documentation for the Union College network.
 
 ## Installation
 
