@@ -1,5 +1,8 @@
 var express = require('express')
 var bodyParser = require('body-parser')
+var config = require('./config.js')
+var connection = require('express-myconnection')
+var mysql = require('mysql')
 
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/netdoc')
@@ -14,16 +17,25 @@ var app = express()
 var routes = require('./routes/')
 
 app.set('view engine', 'jade')
-app.set('port', process.env.PORT || 3000)
+app.set('port', config.port)
 app.set('ip', process.env.IP || 'localhost')
 
 app.use(express.static('public'))
-app.locals.sitename = 'Network Docs'
+app.locals.sitename = config.sitename
 app.locals.source_url = 'https://github.com/UnionCollege/network-documentation'
 
 app.use(bodyParser.urlencoded({
   extended: false
 }))
+
+app.use(
+  connection(mysql, {
+    host: config.mariadb.host,
+    user: config.mariadb.user,
+    password: config.mariadb.pass,
+    database: config.mariadb.db
+  })
+)
 
 app.use(routes)
 
