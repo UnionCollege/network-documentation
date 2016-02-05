@@ -9,7 +9,9 @@ router.get('/', function (req, res) {
   return res.render('index')
 })
 
-router.use(require('./network'))
+router.use(require('./network/aps.js'))
+router.use(require('./network/map.js'))
+router.use(require('./network/patch.js'))
 
 router.get('/phone', function (req, res) {
   return res.render('phone')
@@ -33,4 +35,11 @@ router.get('/about', function (req, res, next) {
   })
 })
 
-// router.use(require('./error'))
+// 404 handler
+router.use(function (req, res) {
+  console.warn('404 Not Found: %s', req.originalUrl)
+  res.status(404).render('error', {
+    title: '404 Error',
+    message: 'Page not found'
+  })
+})
