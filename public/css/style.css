@@ -14,6 +14,10 @@
 .card__table table {
 	width: 100%;
 }
+.card__error > .mdl-card__title {
+	color: #fff;
+	background: rgb(244, 67, 54);
+}
 .card__table > .mdl-card__title {
 	color: #fff;
 	background: #448AFF;
@@ -121,4 +125,38 @@
 }
 .fa-sm {
 	font-size: .8em;
+}
+
+.card2 {
+	margin: 8px;
+}
+.card2.mdl-card {
+  width: 256px;
+  height: 128px;
+  background: #448AFF;
+}
+.card2 > .mdl-card__actions {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.card2 > .mdl-card__title {
+  align-items: flex-start;
+}
+.card2 > .mdl-card__title > h4 {
+  margin-top: 0;
+}
+.card2 > .mdl-card__actions {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+}
+.card2 > .mdl-card__actions > .material-icons {
+  padding-right: 10px;
+}
+.card2 > .mdl-card__title,
+.card2 > .mdl-card__actions,
+.card2 > .mdl-card__actions > .mdl-button {
+  color: #fff;
+}
+.nav-icons {
+	margin-top: 12px;
 }
