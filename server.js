@@ -14,6 +14,9 @@ var knex = require('knex')({
 var Bookshelf = require('bookshelf')(knex)
 
 // Models
+var switch_detailsModel = Bookshelf.Model.extend({
+  tableName: 'switch_details'
+})
 var apsModel = Bookshelf.Model.extend({
   tableName: 'access_points'
 })
@@ -37,9 +40,6 @@ var switch_portsModel = Bookshelf.Model.extend({
   switch: function () {
     return this.hasOne(switch_detailsModel, 'id')
   }
-})
-var switch_detailsModel = Bookshelf.Model.extend({
-  tableName: 'switch_details'
 })
 
 var mongoose = require('mongoose')
@@ -67,6 +67,7 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(bodyParser.json())
 
+/*
 var apsCollection = Bookshelf.Collection.extend({
   model: apsModel
 })
@@ -85,6 +86,7 @@ var switch_portsCollection = Bookshelf.Collection.extend({
 var switch_detailsCollection = Bookshelf.Collection.extend({
   model: switch_detailsModel
 })
+*/
 
 app.use(routes)
 
