@@ -17,14 +17,14 @@ block content
             tr
               td.wap__table-left 
                 a.mdl-button.mdl-js-button.mdl-button--icon(href='/network/aps/#{ap.name}')
-                  i.fa.fa-pencil-square-o.fa-sm
+                  i.material-icons edit
                 | #{ap.name}
               td.wap__table-left #{ap.mac}
               td.wap__table-right
                 a(href="/network/switch/#{ap.sw.name}/#{ap.sw.port}") #{ap.sw.name}/#{ap.sw.port}
               td.wap__table-right
                 a.mdl-button.mdl-js-button.mdl-button--icon(href='https://10.1.1.200/centcfg/device_edit.asp?entity=device&selector=#{ap.mac}')
-                  i.fa.fa-gear
+                  i.material-icons settings
     .mdl-card__menu
       a.mdl-button.mdl-js-button.mdl-button--icon(href='/network/aps/add')
           i.material-icons add

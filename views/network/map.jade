@@ -8,16 +8,21 @@ block content
       table.mdl-data-table.mdl-js-data-table
         thead
           tr
-            th.mdl-data-table__cell--non-numeric Switch
-            th.mdl-data-table__cell--non-numeric Patch
-            th.mdl-data-table__cell--non-numeric Location
+            th Switch
+            th Patch
+            th Location
+            th Edit
         tbody
           - each item in patch
             - each port in item.port
               tr
-                td.mdl-data-table__cell--non-numeric 101#{port.name}/#{port.port}a42
-                td.mdl-data-table__cell--non-numeric Node <strong>#{item.node}</strong>, Panel <strong>#{item.panel}</strong>, Port <strong>#{port.num}</strong>
-                td.mdl-data-table__cell--non-numeric #{port.dest}
+                td 101#{port.name}/#{port.port}a42
+                td Node <strong>#{item.node}</strong>, Panel <strong>#{item.panel}</strong>, Port <strong>#{port.num}</strong>
+                td #{port.dest}
+                td
+                  a.mdl-button.mdl-js-button.mdl-button--icon(href='/network/patch/#{item.node}/#{item.panel}/#{port.num}')
+                    i.material-icons settings
+                    
     .mdl-card__menu
-      a.mdl-button.mdl-js-button.mdl-button--icon(href='/network/aps/add')
+      a.mdl-button.mdl-js-button.mdl-button--icon(href='/network/patch/add')
           i.material-icons add
