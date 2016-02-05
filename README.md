@@ -16,3 +16,4 @@
 * [jade](https://github.com/pugjs/jade#readme)
 * [node-mysql](https://github.com/felixge/node-mysql#readme)
 * [body-parser](https://github.com/expressjs/body-parser#readme)
+* [tablesorter](http://tablesorter.com/docs/)

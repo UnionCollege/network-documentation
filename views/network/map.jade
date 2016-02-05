@@ -4,25 +4,46 @@ block content
   .card.card__table.mdl-card.mdl-shadow--4dp
     .mdl-card__title
       h2.mdl-card__title-text Network Map
-    .mdl-card__media
-      table.mdl-data-table.mdl-js-data-table
+    .mdl-card__supporting-text
+      table.custom__table.tablesorter
         thead
           tr
-            th Switch
-            th Patch
-            th Location
-            th Edit
+            th.custom__table-right(id='sort1') Switch /
+            th.custom__table-left(id='sort2') Port
+            th.custom__table-right(id='sort3') Node
+            th.custom__table-center(id='sort4') Panel
+            th.custom__table-left(id='sort5') Port
+            th.custom__table-left(id='sort6') Location
+            th.custom__table-center Edit
         tbody
           - each item in patch
             - each port in item.port
               tr
-                td 101#{port.name}/#{port.port}a42
-                td Node <strong>#{item.node}</strong>, Panel <strong>#{item.panel}</strong>, Port <strong>#{port.num}</strong>
-                td #{port.dest}
-                td
+                td.custom__table-right 101#{port.name} /
+                td.custom__table-left a42#{port.port}
+                td.custom__table-right #{item.node}
+                td.custom__table-center #{item.panel}
+                td.custom__table-left #{port.num}
+                td.custom__table-left #{port.dest}
+                td.custom__table-center
                   a.mdl-button.mdl-js-button.mdl-button--icon(href='/network/patch/#{item.node}/#{item.panel}/#{port.num}')
                     i.material-icons settings
                     
     .mdl-card__menu
       a.mdl-button.mdl-js-button.mdl-button--icon(href='/network/patch/add')
           i.material-icons add
+    
+    .mdl-tooltip(for='sort1') Sort
+    .mdl-tooltip(for='sort2') Sort
+    .mdl-tooltip(for='sort3') Sort
+    .mdl-tooltip(for='sort4') Sort
+    .mdl-tooltip(for='sort5') Sort
+    .mdl-tooltip(for='sort6') Sort
+  script.
+    $(document).ready(function() 
+      { 
+          $("table").tablesorter({
+            sortList: [[1,0]]
+          }); 
+      } 
+    );

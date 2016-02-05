@@ -4,27 +4,40 @@ block content
   .card.card__table.mdl-card.mdl-shadow--4dp
     .mdl-card__title
       h2.mdl-card__title-text Wireless Access Points
-    .mdl-card__supporting-text.wap__table
-      table
+    .mdl-card__supporting-text.custom__table
+      table.custom__table.tablesorter
         thead
           tr
-            th.wap__table-left Name
-            th.wap__table-left MAC
-            th.wap__table-right Switch
-            th.wap__table-right HP Console
+            th.custom__table-left(id='sort1') Name
+            th.custom__table-left(id='sort2') MAC
+            th.custom__table-right(id='sort3') Switch /
+            th.custom__table-left(id='sort4') Port
         tbody
           each ap in aps
             tr
-              td.wap__table-left 
+              td.custom__table-left 
                 a.mdl-button.mdl-js-button.mdl-button--icon(href='/network/aps/#{ap.name}')
                   i.material-icons edit
                 | #{ap.name}
-              td.wap__table-left #{ap.mac}
-              td.wap__table-right
-                a(href="/network/switch/#{ap.sw.name}/#{ap.sw.port}") #{ap.sw.name}/#{ap.sw.port}
-              td.wap__table-right
-                a.mdl-button.mdl-js-button.mdl-button--icon(href='https://10.1.1.200/centcfg/device_edit.asp?entity=device&selector=#{ap.mac}')
-                  i.material-icons settings
+              td.custom__table-left
+                a(href='https://10.1.1.200/centcfg/device_edit.asp?entity=device&selector=#{ap.mac}') #{ap.mac}
+              td.custom__table-right
+                a(href="/network/switch/#{ap.sw.name}/#{ap.sw.port}") #{ap.sw.name}
+                |  /
+              td.custom__table-left
+                a(href="/network/switch/#{ap.sw.name}/#{ap.sw.port}") #{ap.sw.port}
     .mdl-card__menu
       a.mdl-button.mdl-js-button.mdl-button--icon(href='/network/aps/add')
           i.material-icons add
+    .mdl-tooltip(for='sort1') Sort
+    .mdl-tooltip(for='sort2') Sort
+    .mdl-tooltip(for='sort3') Sort
+    .mdl-tooltip(for='sort4') Sort
+    script.
+      $(document).ready(function() 
+        { 
+            $("table").tablesorter({
+              sortList: [[2,0], [3,0]]
+            }); 
+        } 
+      );
