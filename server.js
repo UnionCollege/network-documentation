@@ -14,31 +14,31 @@ var knex = require('knex')({
 var Bookshelf = require('bookshelf')(knex)
 
 // Models
-var apsDB = Bookshelf.Model.extend({
+var apsModel = Bookshelf.Model.extend({
   tableName: 'access_points'
 })
-var alphaDB = Bookshelf.Model.extend({
+var alphaModel = Bookshelf.Model.extend({
   tableName: 'alpha'
 })
-var panel_portsDB = Bookshelf.Model.extend({
+var panel_portsModel = Bookshelf.Model.extend({
   tableName: 'panel_ports'
 })
-var node_panelDB = Bookshelf.Model.extend({
+var node_panelModel = Bookshelf.Model.extend({
   tableName: 'node_panel',
   panel_id: function () {
-    return this.hasMany(panel_portsDB, 'id')
+    return this.hasMany(panel_portsModel, 'id')
   }
 })
-var switch_portsDB = Bookshelf.Model.extend({
+var switch_portsModel = Bookshelf.Model.extend({
   tableName: 'switch_ports',
   panel: function () {
-    return this.belongsTo(panel_portsDB, 'id')
+    return this.belongsTo(panel_portsModel, 'id')
   },
   switch: function () {
-    return this.hasOne(switch_detailsDB, 'id')
+    return this.hasOne(switch_detailsModel, 'id')
   }
 })
-var switch_detailsDB = Bookshelf.Model.extend({
+var switch_detailsModel = Bookshelf.Model.extend({
   tableName: 'switch_details'
 })
 
@@ -63,8 +63,28 @@ app.locals.sitename = config.sitename
 app.locals.source_url = 'https://github.com/UnionCollege/network-documentation'
 
 app.use(bodyParser.urlencoded({
-  extended: false
+  extended: true
 }))
+app.use(bodyParser.json())
+
+var apsCollection = Bookshelf.Collection.extend({
+  model: apsModel
+})
+var alphaCollection = Bookshelf.Collection.extend({
+  model: alphaModel
+})
+var panel_portsCollection = Bookshelf.Collection.extend({
+  model: panel_portsModel
+})
+var node_panelCollection = Bookshelf.Collection.extend({
+  model: node_panelModel
+})
+var switch_portsCollection = Bookshelf.Collection.extend({
+  model: switch_portsModel
+})
+var switch_detailsCollection = Bookshelf.Collection.extend({
+  model: switch_detailsModel
+})
 
 app.use(routes)
 
