@@ -9,7 +9,7 @@ router.get('/network/aps', function (req, res, next) {
       return next(err)
     }
     res.render('network/aps', {
-      title: 'Access Points',
+      title: 'Wireless Access Points',
       aps: ap
     })
   })

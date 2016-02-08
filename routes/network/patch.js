@@ -20,6 +20,23 @@ router.get('/network/patch', function (req, res, next) {
   })
 })
 
+router.get('/network/map', function (req, res, next) {
+  PatchDB.find().sort({'node': 1, 'panel': 1}).exec(function (err, pa) {
+    if (err) {
+      return next(err)
+    }
+    pa.forEach(function (panel) {
+      panel.port.sort(function (a, b) {
+        return a.num - b.num
+      })
+    })
+    res.render('network/map', {
+      title: 'Network Map',
+      patch: pa
+    })
+  })
+})
+
 router.get('/network/patch/add', function (req, res, next) {
   res.render('network/add/patch', {
     title: 'Add Panel'
@@ -58,11 +75,7 @@ router.get('/network/patch/:node/:panel/:num', function (req, res, next) {
     } else {
       res.render('error', {
         title: 'Error',
-        notification: {
-          title: 'Error',
-          severity: 'danger',
-          message: 'Node ' + req.params.node + ', Panel ' + req.params.panel + ', Port ' + req.params.num + ' does not exist.'
-        }
+        message: 'Node ' + req.params.node + ', Panel ' + req.params.panel + ', Port ' + req.params.num + ' does not exist.'
       })
     }
   })

@@ -1,4 +1,6 @@
 var express = require('express')
+var mssql = require('mssql')
+var config = require('../config.js')
 var router = module.exports = express.Router()
 
 var AlphaDB = require('./../models/alpha.js')
@@ -9,9 +11,22 @@ router.get('/', function (req, res) {
   return res.render('index')
 })
 
-router.use(require('./network/aps.js'))
-router.use(require('./network/map.js'))
-router.use(require('./network/patch.js'))
+router.use(require('./network.js'))
+
+router.get('/computers', function (req, res) {
+  mssql.connect('mssql://' + config.mssql.user + ':' + config.mssql.pass + '@' + config.mssql.host + '/' + config.mssql.db).then(function () {
+    new mssql.Request().query('select * from mytable').then(function (recordset) {
+      console.log(recordset)
+    }).catch(function (err) {
+      console.warn(err)
+    })
+  }).catch(function (err) {
+    console.warn(err)
+  })
+  return res.render('computers', {
+    title: 'Computers'
+  })
+})
 
 router.get('/phone', function (req, res) {
   return res.render('phone')
