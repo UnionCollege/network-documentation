@@ -5,6 +5,7 @@ var patchpanelSchema = new mongoose.Schema({
   panel: Number,
   port: [{
     num: Number,
+    building: String,
     dest: String,
     sw: {
       name: String,
