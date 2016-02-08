@@ -1,14 +1,48 @@
-extends ../layout.jade
+extends ../layout
 
 block content
-  table.mdl-data-table.mdl-js-data-table
-    thead
-      tr
-        th Switch
-        th.mdl-data-table__cell--non-numeric Port
-        th.mdl-data-table__cell--non-numeric Location
-    tbody
-      tr
-        td 102
-        td.mdl-data-table__cell--non-numeric a44
-        td.mdl-data-table__cell--non-numeric DB503-42
+  .card.card__table.mdl-card.mdl-shadow--4dp
+    .mdl-card__title
+      h2.mdl-card__title-text #{title}
+    .mdl-card__media
+      table.mdl-data-table.mdl-js-data-table.custom__table.tablesorter
+        thead
+          tr
+            th.custom__table-right(id='sort1') Switch
+            th.custom__table-left(id='sort2') Port
+            th.custom__table-right(id='sort3') Node
+            th.custom__table-center(id='sort4') Panel
+            th.custom__table-left(id='sort5') Port
+            th.custom__table-left(id='sort6') Location
+            th.custom__table-center
+        tbody
+          tr
+            td.custom__table-right 101
+            td.custom__table-left a42
+            td.custom__table-right 1
+            td.custom__table-center 2
+            td.custom__table-left 3
+            td.custom__table-left
+              a(href='/computers') 1
+            td.custom__table-center
+              a.mdl-button.mdl-js-button.mdl-button--icon(href='#')
+                i.material-icons settings
+                    
+    .mdl-card__menu
+      a.mdl-button.mdl-js-button.mdl-button--icon(href='#')
+          i.material-icons add
+    
+    .mdl-tooltip(for='sort1') Sort
+    .mdl-tooltip(for='sort2') Sort
+    .mdl-tooltip(for='sort3') Sort
+    .mdl-tooltip(for='sort4') Sort
+    .mdl-tooltip(for='sort5') Sort
+    .mdl-tooltip(for='sort6') Sort
+  script.
+    $(document).ready(function() 
+      { 
+          $("table").tablesorter({
+            sortList: [[1,0]]
+          }); 
+      } 
+    );

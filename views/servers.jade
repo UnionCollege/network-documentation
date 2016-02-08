@@ -4,11 +4,11 @@ block content
   .card.card__table.mdl-card.mdl-shadow--4dp
     .mdl-card__title
       h2.mdl-card__title-text #{title}
-    .mdl-card__supporting-text
-      table.custom__table.tablesorter
+    .mdl-card__media
+      table.mdl-data-table.mdl-js-data-table.custom__table.tablesorter
         thead
           tr
-            th.custom__table-right(id='sort1') Switch /
+            th.custom__table-right(id='sort1') Switch
             th.custom__table-left(id='sort2') Port
             th.custom__table-right(id='sort3') Node
             th.custom__table-center(id='sort4') Panel
@@ -17,7 +17,7 @@ block content
             th.custom__table-center
         tbody
           tr
-            td.custom__table-right 101 /
+            td.custom__table-right 101
             td.custom__table-left a42
             td.custom__table-right 1
             td.custom__table-center 2
@@ -29,7 +29,7 @@ block content
                 i.material-icons settings
                     
     .mdl-card__menu
-      a.mdl-button.mdl-js-button.mdl-button--icon(href='/network/patch/add')
+      a.mdl-button.mdl-js-button.mdl-button--icon(href='#')
           i.material-icons add
     
     .mdl-tooltip(for='sort1') Sort
