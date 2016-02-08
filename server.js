@@ -1,13 +1,14 @@
 var express = require('express')
 var bodyParser = require('body-parser')
+var config = require('./config.js')
 
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/netdoc')
+mongoose.connect('mongodb://' + config.mongo.host + '/' + config.mongo.db)
 
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', function (callback) {
-  console.log('[mongoose] connected to mongodb://localhost/netdoc')
+  console.log('[mongoose] connected to mongodb://' + config.mongo.host + '/' + config.mongo.db)
 })
 
 var app = express()
