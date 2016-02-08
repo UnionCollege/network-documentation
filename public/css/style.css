@@ -106,30 +106,6 @@
 	display: flex;
 	justify-content: space-around;
 }
-.custom__table {
-	width: auto;
-}
-.custom__table-left {
-	text-align: left;
-}
-.custom__table-right {
-	text-align: right;
-}
-.custom__table-center {
-	text-align: center;
-}
-.fa-gear {
-	margin-top: 4px;
-	margin-left: 1px;
-}
-.fa-pencil-square-o {
-	margin-top: 4px;
-	margin-left: 2px;
-}
-.fa-sm {
-	font-size: .8em;
-}
-
 .card2 {
 	margin: 8px;
 }
@@ -162,4 +138,17 @@
 }
 .nav-icons {
 	margin-top: 12px;
+}
+
+.mdl-data-table td.custom__table-left,
+.mdl-data-table th.custom__table-left {
+	text-align: left;
+}
+.mdl-data-table td.custom__table-right,
+.mdl-data-table th.custom__table-right {
+	text-align: right;
+}
+.mdl-data-table td.custom__table-center,
+.mdl-data-table th.custom__table-center {
+	text-align: center;
 }

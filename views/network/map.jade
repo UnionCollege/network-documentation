@@ -4,11 +4,11 @@ block content
   .card.card__table.mdl-card.mdl-shadow--4dp
     .mdl-card__title
       h2.mdl-card__title-text #{title}
-    .mdl-card__supporting-text
-      table.custom__table.tablesorter
+    .mdl-card__media
+      table.mdl-data-table.mdl-js-data-table.custom__table.tablesorter
         thead
           tr
-            th.custom__table-right(id='sort1') Switch /
+            th.custom__table-right(id='sort1') Switch
             th.custom__table-left(id='sort2') Port
             th.custom__table-right(id='sort3') Node
             th.custom__table-center(id='sort4') Panel
@@ -19,7 +19,7 @@ block content
           - each item in patch
             - each port in item.port
               tr
-                td.custom__table-right 101#{port.name} /
+                td.custom__table-right 101#{port.name}
                 td.custom__table-left a42#{port.port}
                 td.custom__table-right #{item.node}
                 td.custom__table-center #{item.panel}
@@ -27,7 +27,7 @@ block content
                 td.custom__table-left
                   a(href='/computers##{port.dest}') #{port.dest}
                 td.custom__table-center
-                  a.mdl-button.mdl-js-button.mdl-button--icon(href='/network/patch/#{item.node}/#{item.panel}/#{port.num}')
+                  a(href='/network/patch/#{item.node}/#{item.panel}/#{port.num}')
                     i.material-icons settings
                     
     .mdl-card__menu
