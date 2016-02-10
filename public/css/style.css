@@ -68,13 +68,12 @@
 .misc__alpha-content-pair,
 .misc__vlan-content-pair,
 .building__code-content-pair {
-	flex-basis: 20%;
+	flex-basis: 25%;
 	display: flex;
 	justify-content: space-between;
 	padding-right: 10px;
 	padding-left: 10px;
 }
-.patch__data-content-pair:last-child,
 .misc__vlan-content-pair:last-child {
 	margin-left: auto;
 }
