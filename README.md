@@ -14,6 +14,6 @@
 * [express](https://github.com/strongloop/express#readme)
 * [jade](https://github.com/pugjs/jade#readme)
 * [mdl](http://www.getmdl.io/index.html)
-* [node-mysql](https://github.com/felixge/node-mysql#readme)
+* [node-mssql](https://github.com/patriksimek/node-mssql#readme)
 * [body-parser](https://github.com/expressjs/body-parser#readme)
 * [tablesorter](http://tablesorter.com/docs/)
