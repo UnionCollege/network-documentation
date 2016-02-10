@@ -1,7 +1,11 @@
-# Union College Network Documentation Application
+# Netdoc - Union College Network Documentation Application
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
-#### A CRUD application built to store the documentation for the Union College network.
+##Purpose
+The main function of this software is to allow for a simple web interface for viewing and editing network documentation. This app displays documentation data for network nodes, patch panels, switches, wireless access points, computers, and miscellaneous items. The web interface can be used to view and edit this data.
+
+##Environment
+Netdoc uses Node.js and Express as a webserver, Mongoose to interface with MongoDB databases, and Handlebars as a template engine.
 
 ## Installation
 
