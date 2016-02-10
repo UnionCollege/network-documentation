@@ -136,10 +136,6 @@
 .card2 > .mdl-card__actions > .mdl-button {
   color: #fff;
 }
-.nav-icons {
-	margin-top: 12px;
-}
-
 .mdl-data-table td.custom__table-left,
 .mdl-data-table th.custom__table-left {
 	text-align: left;
