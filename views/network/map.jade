@@ -19,8 +19,8 @@ block content
           - each item in patch
             - each port in item.port
               tr
-                td.custom__table-right #{port.name}
-                td.custom__table-left #{port.port}
+                td.custom__table-right #{port.sw.name}
+                td.custom__table-left #{port.sw.port}
                 td.custom__table-right #{item.node}
                 td.custom__table-center #{item.panel}
                 td.custom__table-left #{port.num}
@@ -44,7 +44,7 @@ block content
     $(document).ready(function() 
       { 
           $("table").tablesorter({
-            sortList: [[1,0]]
+            sortList: [[2,0],[3,0],[4,0]]
           }); 
       } 
     );
