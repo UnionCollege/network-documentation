@@ -147,3 +147,6 @@
 .mdl-data-table th.custom__table-center {
 	text-align: center;
 }
+a.mdl-card__title {
+	text-decoration: none;
+}
