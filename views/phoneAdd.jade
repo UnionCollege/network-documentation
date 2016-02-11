@@ -1,0 +1,55 @@
+extends layout
+
+block content
+  .card.card__patchpanels.mdl-card.mdl-shadow--4dp
+    .mdl-card__title
+      h2.mdl-card__title-text #{title}
+    .mdl-card__supporting-text
+      form(action='', method='POST')
+        if arial
+          .patch__add-form
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', pattern='^[0-9]*$', autocomplete='off', value='#{arial.arial}', name='arial', id='arial')
+              label.mdl-textfield__label(for='arial') Arial #
+              span.mdl-textfield__error Input be numerical
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text' autocomplete='off', value='#{arial.room}' name='room', id='room')
+              label.mdl-textfield__label(for='room') Room
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', autocomplete='off', value='#{arial.desc}', name='desc', id='desc')
+              label.mdl-textfield__label(for='desc') Description
+        else
+          .patch__add-form
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', pattern='^[0-9]*$', autocomplete='off', value='', name='arial', id='arial')
+              label.mdl-textfield__label(for='arial') Arial #
+              span.mdl-textfield__error Input be numerical
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', autocomplete='off', value='' name='room', id='room')
+              label.mdl-textfield__label(for='room') Room
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input.mdl-textfield__input(type='text', autocomplete='off', value='' name='desc', id='desc')
+              label.mdl-textfield__label(for='desc') Description
+        .patch__buttons
+          button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored(type='submit', name='action', value='save') Save
+          if arial
+            button(type='button').mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent.show-modal Delete
+            dialog.mdl-dialog
+              .mdl-dialog__content
+                p Delete this record? This action cannot be reversed.
+              .mdl-dialog__actions
+                button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(type='submit', name='action', value='delete') Delete
+                button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.close(type='button') Cancel
+            script.
+              var dialog = document.querySelector('dialog');
+              var showDialogButton = document.querySelector('.show-modal');
+              if (! dialog.showModal) {
+                dialogPolyfill.registerDialog(dialog);
+              }
+              showDialogButton.addEventListener('click', function() {
+                dialog.showModal();
+              });
+              dialog.querySelector('.close').addEventListener('click', function() {
+                dialog.close();
+              });
+          a.mdl-button.mdl-js-button.mdl-js-ripple-effect(href='/phone') Cancel

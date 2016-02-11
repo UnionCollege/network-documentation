@@ -28,10 +28,3 @@ router.get('/servers', function (req, res, next) {
 })
 
 router.use(require('./network/aps.js'))
-
-// Phone
-router.get('/phone', function (req, res, next) {
-  res.render('phone', {
-    title: 'Phones'
-  })
-})

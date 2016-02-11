@@ -1,6 +1,6 @@
 var express = require('express')
-var mssql = require('mssql')
-var config = require('../config.js')
+// var mssql = require('mssql')
+// var config = require('../config.js')
 var router = module.exports = express.Router()
 
 var AlphaDB = require('./../models/alpha.js')
@@ -8,12 +8,15 @@ var AlphaDB = require('./../models/alpha.js')
 // router.use(require('./auth'))
 
 router.get('/', function (req, res) {
-  return res.render('index')
+  res.render('index')
 })
 
 router.use(require('./network.js'))
 
+router.use(require('./phone.js'))
+
 router.get('/computers', function (req, res) {
+  /*
   mssql.connect('mssql://' + config.mssql.user + ':' + config.mssql.pass + '@' + config.mssql.host + '/' + config.mssql.db).then(function () {
     new mssql.Request().query('select * from mytable').then(function (recordset) {
       console.log(recordset)
@@ -23,13 +26,10 @@ router.get('/computers', function (req, res) {
   }).catch(function (err) {
     console.warn(err)
   })
-  return res.render('computers', {
+  */
+  res.render('computers', {
     title: 'Computers'
   })
-})
-
-router.get('/phone', function (req, res) {
-  return res.render('phone')
 })
 
 // Miscellaneous
@@ -41,12 +41,6 @@ router.get('/misc', function (req, res, next) {
     res.render('misc', {
       alpha: alphas
     })
-  })
-})
-
-router.get('/about', function (req, res, next) {
-  res.render('about', {
-    title: 'About'
   })
 })
 

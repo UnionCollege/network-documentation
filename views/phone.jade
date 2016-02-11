@@ -8,41 +8,28 @@ block content
       table.mdl-data-table.mdl-js-data-table.custom__table.tablesorter
         thead
           tr
-            th.custom__table-right(id='sort1') Switch
-            th.custom__table-left(id='sort2') Port
-            th.custom__table-right(id='sort3') Node
-            th.custom__table-center(id='sort4') Panel
-            th.custom__table-left(id='sort5') Port
-            th.custom__table-left(id='sort6') Location
-            th.custom__table-center
+            th.custom__table-left(id='sort1') Arial #
+            th.custom__table-left(id='sort2') Room
+            th.custom__table-left(id='sort3') Description
         tbody
-          tr
-            td.custom__table-right 101
-            td.custom__table-left a42
-            td.custom__table-right 1
-            td.custom__table-center 2
-            td.custom__table-left 3
-            td.custom__table-left
-              a(href='/computers') 1
-            td.custom__table-center
-              a.mdl-button.mdl-js-button.mdl-button--icon(href='#')
-                i.material-icons settings
-                    
+          each item in arial
+            tr
+              td.custom__table-left
+                a(href='/phone/#{item.arial}') #{item.arial}
+              td.custom__table-left #{item.room}
+              td.custom__table-left #{item.desc}
     .mdl-card__menu
-      a.mdl-button.mdl-js-button.mdl-button--icon(href='#')
+      a.mdl-button.mdl-js-button.mdl-button--icon(href='/phone/add')
           i.material-icons add
     
     .mdl-tooltip(for='sort1') Sort
     .mdl-tooltip(for='sort2') Sort
     .mdl-tooltip(for='sort3') Sort
-    .mdl-tooltip(for='sort4') Sort
-    .mdl-tooltip(for='sort5') Sort
-    .mdl-tooltip(for='sort6') Sort
   script.
     $(document).ready(function() 
       { 
           $("table").tablesorter({
-            sortList: [[1,0]]
+            sortList: [[0,0]]
           }); 
       } 
     );

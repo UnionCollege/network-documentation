@@ -1,8 +1,7 @@
 var mongoose = require('mongoose')
 var phoneSchema = new mongoose.Schema({
-  pen: String,
-  arial: String,
-  loc: String,
+  arial: Number,
+  room: String,
   desc: String
 })
 
