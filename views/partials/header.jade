@@ -1,11 +1,10 @@
 header.mdl-layout__header
   .mdl-layout__header-row
-    span.mdl-layout-title #{sitename}
+    a.header-home(href='/')
+      span.mdl-layout-title #{sitename}
     .mdl-layout-spacer
     .mdl-navigation.mdl-layout--large-screen-only
       nav.mdl-navigation
-        a.mdl-navigation__link.nav-icons(href='/')
-          i.material-icons home
         a.mdl-navigation__link.nav-icons(href='/network/map')
           i.material-icons map
         a.mdl-navigation__link.nav-icons(href='/network/patch')
@@ -23,7 +22,6 @@ header.mdl-layout__header
 .mdl-layout__drawer
   span.mdl-layout-title #{sitename}
   nav.mdl-navigation
-    a.mdl-navigation__link(href='/') Home
     a.mdl-navigation__link(href='/network/map') Network Map
     a.mdl-navigation__link(href='/netork/patch') Patch Panels
     a.mdl-navigation__link(href='/netork/aps') Wireless Access Points
