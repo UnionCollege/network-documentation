@@ -59,5 +59,24 @@ block content
         .patch__buttons
           button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored(type='submit', name='action', value='save') Save
           if padetail
-            button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(type='submit', name='action', value='delete') Delete
+            button(type='button').mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent.show-modal Delete
+            dialog.mdl-dialog
+              .mdl-dialog__content
+                p Delete this record? This action cannot be reversed.
+              .mdl-dialog__actions
+                button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(type='submit', name='action', value='delete') Delete
+                button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.close(type='button') Cancel
+            script.
+              var dialog = document.querySelector('dialog');
+              var showDialogButton = document.querySelector('.show-modal');
+              if (! dialog.showModal) {
+                dialogPolyfill.registerDialog(dialog);
+              }
+              showDialogButton.addEventListener('click', function() {
+                dialog.showModal();
+              });
+              dialog.querySelector('.close').addEventListener('click', function() {
+                dialog.close();
+              });
+
           a.mdl-button.mdl-js-button.mdl-js-ripple-effect(href='/network/patch') Cancel

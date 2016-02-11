@@ -5,7 +5,9 @@
 The main function of this software is to allow for a simple web interface for viewing and editing network documentation. This app displays documentation data for network nodes, patch panels, switches, wireless access points, computers, and miscellaneous items. The web interface can be used to view and edit this data.
 
 ##Environment
-Netdoc uses Node.js and Express as a webserver, Mongoose to interface with MongoDB databases, and Handlebars as a template engine.
+Netdoc uses Node.js and Express as a webserver, Mongoose to interface with MongoDB databases, and Jade as a template engine.
+
+Currently netdoc is only compatible with the Chrome browser.
 
 ## Installation
 
