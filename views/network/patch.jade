@@ -31,11 +31,6 @@ block content
                 a(href="/network/patch/#{panel.node}/#{panel.panel}/#{port.num}") #{port.num}
               p.patch__data-content-item
                 a(href="/network/patch/#{panel.node}/#{panel.panel}/#{port.num}") #{port.dest}
-      .mdl-card__menu
-        button.mdl-button.mdl-js-button.mdl-button--icon(id='N#{panel.node}P#{panel.panel}')
-          i.material-icons more_vert
-      ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for='N#{panel.node}P#{panel.panel}')
-        li.mdl-menu__item
-          a(href='#top' data-scroll) Back to top
-        li.mdl-menu__item
-          a(href='/network/patch/add') Add
+        .mdl-card__menu
+          a.mdl-button.mdl-js-button.mdl-button--icon(href='/network/patch/add')
+              i.material-icons add
